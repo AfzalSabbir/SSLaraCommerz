@@ -71,7 +71,7 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/SSLaraCommerz.php' => config_path('SSLaraCommerz.php'),
+                __DIR__ . '/../config/sslcommerz.php' => config_path('sslcommerz.php'),
             ], 'config');
         }
     }
