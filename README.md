@@ -1,4 +1,4 @@
-# sslaracommerz
+# SSLaraCommerz
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Travis](https://img.shields.io/travis/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
