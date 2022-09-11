@@ -8,7 +8,34 @@
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/afzalsabbir/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/afzalsabbir/sslaracommerz)
 [![Build Status](https://img.shields.io/travis/afzalsabbir/sslaracommerz/master.svg?style=flat-square)](https://travis-ci.org/afzalsabbir/sslaracommerz)
 [![Quality Score](https://img.shields.io/scrutinizer/g/afzalsabbir/sslaracommerz.svg?style=flat-square)](https://scrutinizer-ci.com/g/afzalsabbir/sslaracommerz)
+[![Commits Since](https://img.shields.io/github/commits-since/afzalsabbir/sslaracommerz/v0.0.1-alpha-0.svg?style=flat-square)]()
+
+[![GitHub contributors](https://img.shields.io/github/contributors/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub issues](https://img.shields.io/github/issues/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub issues](https://img.shields.io/github/issues-closed/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+
+[![GitHub forks](https://img.shields.io/github/forks/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub stars](https://img.shields.io/github/stars/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub watchers](https://img.shields.io/github/watchers/afzalsabbir/sslaracommerz.svg?style=social&label=Watch)]()
+[![GitHub followers](https://img.shields.io/github/followers/afzalsabbir.svg?style=social&label=Follow)]()
+[![Twitter Follow](https://img.shields.io/twitter/follow/afzalsabbir.svg?style=social)]()
+
 [![Total Downloads](https://img.shields.io/packagist/dt/afzalsabbir/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/afzalsabbir/sslaracommerz)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/m/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/w/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/d/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+
+[![GitHub release](https://img.shields.io/github/release/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub release date](https://img.shields.io/github/release-date/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub All Releases](https://img.shields.io/github/downloads/afzalsabbir/sslaracommerz/total.svg?style=flat-square)]()
+[![GitHub tag](https://img.shields.io/github/tag/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub release](https://img.shields.io/github/release-date-pre/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![GitHub release](https://img.shields.io/github/release-date/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
 
 __Tags:__ Payment Gateway, SSLCommerz, IPN, Laravel, SSLaraCommerz
 
