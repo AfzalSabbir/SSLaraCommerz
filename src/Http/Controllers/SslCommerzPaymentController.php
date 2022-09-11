@@ -9,15 +9,14 @@ use AfzalSabbir\SSLaraCommerz\Library\SslCommerz\SslCommerzNotification;
 
 class SslCommerzPaymentController extends Controller
 {
-
     public function exampleEasyCheckout()
     {
-        return view('exampleEasycheckout');
+        return view('SSLaraCommerz::exampleEasycheckout');
     }
 
     public function exampleHostedCheckout()
     {
-        return view('exampleHosted');
+        return view('SSLaraCommerz::exampleHosted');
     }
 
     public function index(Request $request)
@@ -91,7 +90,6 @@ class SslCommerzPaymentController extends Controller
 
     public function payViaAjax(Request $request)
     {
-
         # Here you have to receive all the order data to initate the payment.
         # Lets your oder trnsaction informations are saving in a table called "orders"
         # In orders table order uniq identity is "transaction_id","status" field contain status of the transaction, "amount" is the order amount to be paid and "currency" is for storing Site Currency which will be checked with paid currency.
@@ -309,5 +307,4 @@ class SslCommerzPaymentController extends Controller
             echo "Invalid Data";
         }
     }
-
 }
