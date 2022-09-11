@@ -13,6 +13,6 @@ class SSLaraCommerzFacade extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'sslaracommerz';
+        return 'SSLaraCommerz';
     }
 }
