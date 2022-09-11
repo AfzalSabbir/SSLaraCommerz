@@ -21,10 +21,6 @@ __License:__ MIT License
 composer require afzalsabbir/sslaracommerz
 ```
 
-## Usage
-
-Write a few lines about the usage of this package.
-
 ## Vendor Publish
 
 ### Required
