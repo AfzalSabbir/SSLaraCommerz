@@ -14,7 +14,7 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/sslcommerz.php', 'sslaracommerz');
+        $this->mergeConfigFrom(__DIR__ . '/../config/sslcommerz.php', 'sslcommerz');
 
         $this->publishConfig();
         $this->publishViews();
