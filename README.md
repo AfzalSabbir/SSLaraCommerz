@@ -28,11 +28,13 @@
 [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/y/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
 [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/m/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
 [![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/w/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
-[![GitHub commit activity the past week, 4 weeks, year](https://img.shields.io/github/commit-activity/d/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+
+[//]: # ([![GitHub commit activity the past week, 4 weeks, year]&#40;https://img.shields.io/github/commit-activity/d/afzalsabbir/sslaracommerz.svg?style=flat-square&#41;]&#40;&#41;)
 
 [![GitHub release](https://img.shields.io/github/release/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
 [![GitHub release date](https://img.shields.io/github/release-date/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
-[![GitHub All Releases](https://img.shields.io/github/downloads/afzalsabbir/sslaracommerz/total.svg?style=flat-square)]()
+
+[//]: # ([![GitHub All Releases]&#40;https://img.shields.io/github/downloads/afzalsabbir/sslaracommerz/total.svg?style=flat-square&#41;]&#40;&#41;)
 [![GitHub tag](https://img.shields.io/github/tag/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
 [![GitHub release](https://img.shields.io/github/release-date-pre/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
 [![GitHub release](https://img.shields.io/github/release-date/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
