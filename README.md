@@ -21,9 +21,9 @@ __License:__ MIT License
 composer require afzalsabbir/sslaracommerz
 ```
 
-## Vendor Publish
+## Instructions
 
-### Required
+### Vendor Publish - _Required_
 
 <span id="public-assets">
 
@@ -34,7 +34,84 @@ php artisan vendor:publish --provider="AfzalSabbir\SSLaraCommerz\SSLaraCommerzSe
 
 </span>
 
-### Optional
+#### **Public Assets**: _To integrate popup checkout, use the below script before the end of body tag._
+
+- For Sandbox
+
+    ```html
+    <script>
+        (function (window, document) {
+            var loader = function () {
+                var script = document.createElement("script"),
+                    tag    = document.getElementsByTagName("script")[0];
+                script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+                tag.parentNode.insertBefore(script, tag);
+            };
+    
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+    </script>
+    ```
+
+  > or, Publish the [Public Assets](#public-assets) and use the below `sandbox` script
+
+    ```html
+    <script src="/assets/js/sandbox.js"></script>
+    ```
+
+- For Live
+
+    ```html
+    <script>
+        (function (window, document) {
+            var loader = function () {
+                var script = document.createElement("script"),
+                    tag    = document.getElementsByTagName("script")[0];
+                script.src = "https://seamless-epay.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
+                tag.parentNode.insertBefore(script, tag);
+            };
+    
+            window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
+        })(window, document);
+    </script>
+    ```
+
+  > or, Publish the [Public Assets](#public-assets) and use the below `live` script
+
+    ```html
+    <script src="/assets/js/live.js"></script>
+    ``` 
+
+<span id="routes-controller">
+
+```bash
+# Routes and Controller
+php artisan vendor:publish --provider="AfzalSabbir\SSLaraCommerz\SSLaraCommerzServiceProvider" --tag="routes-controller"
+```
+
+</span>
+
+- Publish the [Routes and Controller](#routes-controller)
+  and add `$this->loadRoutesFrom(base_path('routes/sslcommerz.php'));` in `app/Providers/RouteServiceProvider.php`
+
+    ```php
+    namespace App\Providers;
+    
+    // ...
+    
+    class RouteServiceProvider extends ServiceProvider
+    {
+        // ...
+        public function boot()
+        {
+            // ...
+            $this->loadRoutesFrom(base_path('routes/sslcommerz.php'));
+        }
+        // ...
+    }
+    ```
+
+### Vendor Publish - _Optional_
 
 <span id="config-views-migrations">
 
@@ -49,141 +126,50 @@ php artisan vendor:publish --provider="AfzalSabbir\SSLaraCommerz\SSLaraCommerzSe
 # Migrations
 php artisan vendor:publish --provider="AfzalSabbir\SSLaraCommerz\SSLaraCommerzServiceProvider" --tag="migrations"
 ```
-
 </span>
 
-## Instructions
-
-* __Step 1:__ Install the package using composer command. _(i.e. `composer require afzalsabbir/sslaracommerz`)_.
-
-[//]: # (* __Step 2:__ Copy the `Library` folder and put it in the laravel project's `app/` directory. If needed, then run `composer dump -o`.)
-
-[//]: # (* __Step 3:__ Copy the `config/sslcommerz.php` file into your project's `config/` folder.)
-
-* __Step 2:__ Can publish [config](#config-views-migrations) and custom the package as per your need.
-
-* __Optional:__ If you later encounter issues with session destroying after redirect, you can
+> __Note:__ If you later encounter issues with session destroying after redirect, you can
   set ```'same_site' => null,``` in your `config/session.php` file.
 
-[//]: # (* __Step 4:__ Add `STORE_ID` and `STORE_PASSWORD` values on your project's `.env` file. You can register for a store at [https://developer.sslcommerz.com/registration/]&#40;https://developer.sslcommerz.com/registration/&#41;)
 
-* __Step 3:__ Add `STORE_ID` and `STORE_PASSWORD` values on your project's `.env` file. You can register for a store
+* __Step 1:__ Add `STORE_ID` and `STORE_PASSWORD` values on your project's `.env` file. You can register for a store
   at [https://developer.sslcommerz.com/registration/](https://developer.sslcommerz.com/registration/)
 
-[//]: # (* __Step 5:__ Copy the `SslCommerzPaymentController` into your project's `Controllers` folder.)
+* __Step 2:__ Add the below routes into the `$excepts` array of `VerifyCsrfToken` middleware.
 
-* __Step 4:__ Package routes are like below. You can use them as per your need.
-
-```php
-use Illuminate\Support\Facades\Route;
-
-// Controller namespace: "AfzalSabbir\SSLaraCommerz\Http\Controllers"
-Route::get('/example1', 'SslCommerzPaymentController@exampleEasyCheckout');
-Route::get('/example2', 'SslCommerzPaymentController@exampleHostedCheckout');
-
-Route::post('/pay', 'SslCommerzPaymentController@index');
-Route::post('/pay-via-ajax', 'SslCommerzPaymentController@payViaAjax');
-
-Route::post('/success', 'SslCommerzPaymentController@success');
-Route::post('/fail', 'SslCommerzPaymentController@fail');
-Route::post('/cancel', 'SslCommerzPaymentController@cancel');
-
-Route::post('/ipn', 'SslCommerzPaymentController@ipn');
-```
-
-[//]: # (* __Step 7:__ Add the below routes into the `$excepts` array of `VerifyCsrfToken` middleware.)
-
-* __Step 5:__ Add the below routes into the `$excepts` array of `VerifyCsrfToken` middleware.
-
-```php
-protected $except = [
-    '/pay-via-ajax', '/success','/cancel','/fail','/ipn'
-];
-```
-
-[//]: # (* __Step 8:__ Copy the `resources/views/*.blade.php` files into your project's `resources/views/` folder.)
-
-* __Step 6:__ Can publish [views](#config-views-migrations) and custom the views as per your need.
+    ```php
+    protected $except = [
+        '/pay-via-ajax', '/success','/cancel','/fail','/ipn'
+    ];
+    ```
 
 Now, let's go to the main integration part.
 
-[//]: # (* __Step 9:__ To integrate popup checkout, use the below script before the end of body tag.)
+* __Step 3:__ Use the below button where you want to show the **"Pay Now"** button:
 
-* __Step 7:__ To integrate popup checkout, use the below script before the end of body tag.
+    ```html
+    <button class="your-button-class" id="sslczPayBtn"
+            token="if you have any token validation"
+            postdata="your javascript arrays or objects which requires in backend"
+            order="If you already have the transaction generated for current order"
+            endpoint="/pay-via-ajax"> Pay Now
+    </button>
+    ```
+* __Step 4:__ For EasyCheckout (Popup) integration, you can update the `checkout_ajax.php` or use a different file
+  according to your need. We have provided a basic sample page from where you can kickstart the payment gateway
+  integration.
 
-##### For Sandbox
+* __Step 5:__ For Hosted Checkout integration, you can update the `checkout_hosted.php` or use a different file
+  according to your need. We have provided a basic sample page from where you can kickstart the payment gateway
+  integration.
 
-```html
+* __Step 6:__ For redirecting action from SSLCommerz Payment gateway, we have also provided sample `success.php`
+  , `cancel.php`, `fail.php`files. You can update those files according to your need.
 
-<script>
-    (function (window, document) {
-        var loader = function () {
-            var script = document.createElement("script"),
-                tag    = document.getElementsByTagName("script")[0];
-            script.src = "https://sandbox.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
-            tag.parentNode.insertBefore(script, tag);
-        };
+## Original Documentation
 
-        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
-    })(window, document);
-</script>
-```
-
-> or, Publish the [Public Assets](#public-assets) and use the below `sandbox` script
-
-```html
-
-<script src="/assets/js/sandbox.js"></script>
-```
-
----
-
-##### For Live
-
-```html
-
-<script>
-    (function (window, document) {
-        var loader = function () {
-            var script = document.createElement("script"),
-                tag    = document.getElementsByTagName("script")[0];
-            script.src = "https://seamless-epay.sslcommerz.com/embed.min.js?" + Math.random().toString(36).substring(7);
-            tag.parentNode.insertBefore(script, tag);
-        };
-
-        window.addEventListener ? window.addEventListener("load", loader, false) : window.attachEvent("onload", loader);
-    })(window, document);
-</script>
-```
-
-> or, Publish the [Public Assets](#public-assets) and use the below `live` script
-
-```html
-
-<script src="/assets/js/live.js"></script>
-```
-
-[//]: # (* __Step 10:__ Use the below button where you want to show the **"Pay Now"** button:)
-* __Step 8:__ Use the below button where you want to show the **"Pay Now"** button:
-
-```html
-
-<button class="your-button-class" id="sslczPayBtn"
-        token="if you have any token validation"
-        postdata="your javascript arrays or objects which requires in backend"
-        order="If you already have the transaction generated for current order"
-        endpoint="/pay-via-ajax"> Pay Now
-</button>
-```
-
-[//]: # (* __Step 11:__ For EasyCheckout &#40;Popup&#41; integration, you can update the `checkout_ajax.php` or use a different file according to your need. We have provided a basic sample page from where you can kickstart the payment gateway integration.)
-* __Step 9:__ For EasyCheckout (Popup) integration, you can update the `checkout_ajax.php` or use a different file according to your need. We have provided a basic sample page from where you can kickstart the payment gateway integration.
-
-[//]: # (* __Step 12:__ For Hosted Checkout integration, you can update the `checkout_hosted.php` or use a different file according to your need. We have provided a basic sample page from where you can kickstart the payment gateway integration.)
-* __Step 10:__ For Hosted Checkout integration, you can update the `checkout_hosted.php` or use a different file according to your need. We have provided a basic sample page from where you can kickstart the payment gateway integration.
-
-[//]: # (* __Step 13:__ For redirecting action from SSLCommerz Payment gateway, we have also provided sample `success.php`, `cancel.php`, `fail.php`files. You can update those files according to your need.)
-* __Step 11:__ For redirecting action from SSLCommerz Payment gateway, we have also provided sample `success.php`, `cancel.php`, `fail.php`files. You can update those files according to your need.
+For more clear concept
+read: [SSLCommerz README.md](https://github.com/sslcommerz/SSLCommerz-Laravel/blob/master/README.md)
 
 ## Testing
 
