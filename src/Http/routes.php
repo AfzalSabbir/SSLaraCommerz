@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-// SSLCOMMERZ Start
+// SSLaraCommerz Start
 Route::get('/example1', 'SslCommerzPaymentController@exampleEasyCheckout');
 Route::get('/example2', 'SslCommerzPaymentController@exampleHostedCheckout');
 
@@ -14,4 +14,4 @@ Route::post('/fail', 'SslCommerzPaymentController@fail');
 Route::post('/cancel', 'SslCommerzPaymentController@cancel');
 
 Route::post('/ipn', 'SslCommerzPaymentController@ipn');
-//SSLCOMMERZ END
+//SSLaraCommerz End
