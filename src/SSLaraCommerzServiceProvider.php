@@ -21,6 +21,7 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
         $this->publishMigrations();
         //$this->publishModel();
         $this->publishAssets();
+        $this->publishRoutesAndController();
 
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'sslaracommerz');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
@@ -133,6 +134,21 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../public/assets' => public_path('assets'),
             ], 'public-assets');
+        }
+    }
+
+    /**
+     * Publish  Routes And Controller
+     *
+     * @return void
+     */
+    public function publishRoutesAndController(): void
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/Http/publish-routes.php' => base_path('routes/sslcommerz.php'),
+                __DIR__ . '/Http/Controllers/PublishSslCommerzPaymentController.php' => app_path('Http/Controllers/SslCommerzPaymentController.php'),
+            ], 'routes-controller');
         }
     }
 }
