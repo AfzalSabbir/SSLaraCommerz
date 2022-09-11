@@ -1,14 +1,14 @@
 # sslaracommerz
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Travis](https://img.shields.io/travis/afzal-sabbir/sslaracommerz.svg?style=flat-square)]()
-[![Total Downloads](https://img.shields.io/packagist/dt/afzal-sabbir/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/afzal-sabbir/sslaracommerz)
+[![Travis](https://img.shields.io/travis/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![Total Downloads](https://img.shields.io/packagist/dt/afzalsabbir/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/afzalsabbir/sslaracommerz)
 
 
 ## Install
 
 ```bash
-composer require afzal-sabbir/sslaracommerz
+composer require afzalsabbir/sslaracommerz
 ```
 
 
