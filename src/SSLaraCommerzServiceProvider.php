@@ -19,6 +19,8 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
         $this->publishConfig();
         $this->publishViews();
         $this->publishMigrations();
+        //$this->publishModel();
+        $this->publishAssets();
 
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'sslaracommerz');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
@@ -69,7 +71,7 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function publishConfig()
+    public function publishConfig(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -83,12 +85,12 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function publishViews()
+    public function publishViews(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/resources/views' => resource_path('views'),
-            ]);
+            ], 'views');
         }
     }
 
@@ -97,12 +99,40 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function publishMigrations()
+    public function publishMigrations(): void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
                 __DIR__ . '/../database/migrations' => database_path('migrations'),
-            ]);
+            ], 'migrations');
+        }
+    }
+
+    /**
+     * Publish Model
+     *
+     * @return void
+     */
+    public function publishModel(): void
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/Models/Order.php' => app_path('Models/Order.php'),
+            ], 'model');
+        }
+    }
+
+    /**
+     * Publish Assets
+     *
+     * @return void
+     */
+    public function publishAssets(): void
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../public/assets' => public_path('assets'),
+            ], 'public-assets');
         }
     }
 }
