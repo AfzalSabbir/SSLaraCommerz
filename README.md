@@ -18,8 +18,14 @@ __License:__ MIT License
 
 ## Install
 
-```bash
+```php
 composer require afzalsabbir/sslaracommerz
+```
+
+## Migration
+
+```php
+php artisan migrate
 ```
 
 ## Instructions
