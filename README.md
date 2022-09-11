@@ -111,7 +111,7 @@ php artisan vendor:publish --provider="AfzalSabbir\SSLaraCommerz\SSLaraCommerzSe
     }
     ```
   
-  ---
+---
 
 ### Vendor Publish - _Optional_
 
