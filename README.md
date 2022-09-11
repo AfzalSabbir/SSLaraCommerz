@@ -3,15 +3,10 @@
 > A package for SSLCommerz Payment Gateway \
 <sub><sup>Inspired by [SSLCommerz](https://github.com/sslcommerz/SSLCommerz-Laravel)</sup></sub>
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/hasib32/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/hasib32/sslaracommerz)
-[![Build Status](https://img.shields.io/travis/hasib32/sslaracommerz/master.svg?style=flat-square)](https://travis-ci.org/hasib32/sslaracommerz)
-[![Quality Score](https://img.shields.io/scrutinizer/g/hasib32/sslaracommerz.svg?style=flat-square)](https://scrutinizer-ci.com/g/hasib32/sslaracommerz)
-[![Total Downloads](https://img.shields.io/packagist/dt/hasib32/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/hasib32/sslaracommerz)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/hasib32/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/hasib32/sslaracommerz)
-[![Total Downloads](https://img.shields.io/packagist/dt/hasib32/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/hasib32/sslaracommerz)
-
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Travis](https://img.shields.io/travis/afzalsabbir/sslaracommerz.svg?style=flat-square)]()
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/afzalsabbir/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/afzalsabbir/sslaracommerz)
+[![Build Status](https://img.shields.io/travis/afzalsabbir/sslaracommerz/master.svg?style=flat-square)](https://travis-ci.org/afzalsabbir/sslaracommerz)
+[![Quality Score](https://img.shields.io/scrutinizer/g/afzalsabbir/sslaracommerz.svg?style=flat-square)](https://scrutinizer-ci.com/g/afzalsabbir/sslaracommerz)
 [![Total Downloads](https://img.shields.io/packagist/dt/afzalsabbir/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/afzalsabbir/sslaracommerz)
 
 __Tags:__ Payment Gateway, SSLCommerz, IPN, Laravel, SSLaraCommerz
