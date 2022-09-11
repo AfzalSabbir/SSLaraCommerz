@@ -91,9 +91,8 @@ php artisan vendor:publish --provider="AfzalSabbir\SSLaraCommerz\SSLaraCommerzSe
 
 </span>
 
-- Publish the [Routes and Controller](#routes-controller)
-  and add `$this->loadRoutesFrom(base_path('routes/sslcommerz.php'));` in `app/Providers/RouteServiceProvider.php`
-
+#### **Routes and Controller**: _To customize the routes and controller, use the below command._
+- Add `$this->loadRoutesFrom(base_path('routes/sslcommerz.php'));` in `app/Providers/RouteServiceProvider.php`
     ```php
     namespace App\Providers;
     
