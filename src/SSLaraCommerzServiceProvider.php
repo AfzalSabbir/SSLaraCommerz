@@ -19,7 +19,7 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
         $this->publishConfig();
 
         // $this->loadViewsFrom(__DIR__.'/resources/views', 'sslaracommerz');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->registerRoutes();
     }
 
