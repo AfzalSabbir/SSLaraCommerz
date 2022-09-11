@@ -1,20 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use AfzalSabbir\SSLaraCommerz\Http\Controllers\SslCommerzPaymentController;
 
 // SSLCOMMERZ Start
-Route::controller(SslCommerzPaymentController::class)->group(function () {
-    Route::get('/example1', 'exampleEasyCheckout');
-    Route::get('/example2', 'exampleHostedCheckout');
+Route::get('/example1', 'SslCommerzPaymentController@exampleEasyCheckout');
+Route::get('/example2', 'SslCommerzPaymentController@exampleHostedCheckout');
 
-    Route::post('/pay', 'index');
-    Route::post('/pay-via-ajax', 'payViaAjax');
+Route::post('/pay', 'SslCommerzPaymentController@index');
+Route::post('/pay-via-ajax', 'SslCommerzPaymentController@payViaAjax');
 
-    Route::post('/success', 'success');
-    Route::post('/fail', 'fail');
-    Route::post('/cancel', 'cancel');
+Route::post('/success', 'SslCommerzPaymentController@success');
+Route::post('/fail', 'SslCommerzPaymentController@fail');
+Route::post('/cancel', 'SslCommerzPaymentController@cancel');
 
-    Route::post('/ipn', 'ipn');
-});
+Route::post('/ipn', 'SslCommerzPaymentController@ipn');
 //SSLCOMMERZ END
