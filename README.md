@@ -1,6 +1,7 @@
 # SSLaraCommerz - Laravel Package
 
-> A package for SSLCommerz Payment Gateway
+> A package for SSLCommerz Payment Gateway \
+<sub><sup>Inspired by [SSLCommerz](https://github.com/sslcommerz/SSLCommerz-Laravel)</sup></sub>
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/hasib32/sslaracommerz.svg?style=flat-square)](https://packagist.org/packages/hasib32/sslaracommerz)
 [![Build Status](https://img.shields.io/travis/hasib32/sslaracommerz/master.svg?style=flat-square)](https://travis-ci.org/hasib32/sslaracommerz)
