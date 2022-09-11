@@ -36,16 +36,16 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
     }
 
     /**
-    * Get route group configuration array.
-    *
-    * @return array
-    */
+     * Get route group configuration array.
+     *
+     * @return array
+     */
     private function routeConfiguration()
     {
         return [
-            'namespace'  => "AfzalSabbir\SSLaraCommerz\Http\Controllers",
-            'middleware' => 'api',
-            'prefix'     => 'api'
+            'namespace' => "AfzalSabbir\SSLaraCommerz\Http\Controllers",
+            // 'middleware' => 'api',
+            // 'prefix'     => 'api'
         ];
     }
 
