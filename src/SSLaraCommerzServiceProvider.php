@@ -17,9 +17,11 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(__DIR__ . '/../config/sslcommerz.php', 'sslaracommerz');
 
         $this->publishConfig();
+        $this->publishViews();
+        $this->publishMigrations();
 
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'SSLaraCommerz');
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'sslaracommerz');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->registerRoutes();
     }
 
@@ -73,6 +75,34 @@ class SSLaraCommerzServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../config/sslcommerz.php' => config_path('sslcommerz.php'),
             ], 'config');
+        }
+    }
+
+    /**
+     * Publish Views
+     *
+     * @return void
+     */
+    public function publishViews()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/resources/views' => resource_path('views'),
+            ]);
+        }
+    }
+
+    /**
+     * Publish Migrations
+     *
+     * @return void
+     */
+    public function publishMigrations()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__ . '/../database/migrations' => database_path('migrations'),
+            ]);
         }
     }
 }
