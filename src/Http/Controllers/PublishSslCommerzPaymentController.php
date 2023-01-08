@@ -173,9 +173,9 @@ class SslCommerzPaymentController extends Controller
             ->select('transaction_id', 'status', 'currency', 'amount')->first();
 
         if ($order_detials->status == 'Pending') {
-            $validation = $sslc->orderValidate($tran_id, $amount, $currency, $request->all());
+            $validation = $sslc->orderValidate($request->all(), $tran_id, $amount, $currency);
 
-            if ($validation == TRUE) {
+            if ($validation) {
                 /*
                 That means IPN did not work or IPN URL was not set in your merchant panel. Here you need to update order status
                 in order table as Processing or Complete.
@@ -186,15 +186,6 @@ class SslCommerzPaymentController extends Controller
                     ->update(['status' => 'Processing']);
 
                 echo "<br >Transaction is successfully Completed";
-            } else {
-                /*
-                That means IPN did not work or IPN URL was not set in your merchant panel and Transation validation failed.
-                Here you need to update order status as Failed in order table.
-                */
-                $update_product = DB::table('orders')
-                    ->where('transaction_id', $tran_id)
-                    ->update(['status' => 'Failed']);
-                echo "validation Fail";
             }
         } else if ($order_detials->status == 'Processing' || $order_detials->status == 'Complete') {
             /*
@@ -268,7 +259,7 @@ class SslCommerzPaymentController extends Controller
             if ($order_details->status == 'Pending') {
                 $sslc       = new SslCommerzNotification();
                 $validation =
-                    $sslc->orderValidate($tran_id, $order_details->amount, $order_details->currency, $request->all());
+                    $sslc->orderValidate($request->all(), $tran_id, $order_details->amount, $order_details->currency);
                 if ($validation == TRUE) {
                     /*
                     That means IPN worked. Here you need to update order status
@@ -280,18 +271,7 @@ class SslCommerzPaymentController extends Controller
                         ->update(['status' => 'Processing']);
 
                     echo "Transaction is successfully Completed";
-                } else {
-                    /*
-                    That means IPN worked, but Transation validation failed.
-                    Here you need to update order status as Failed in order table.
-                    */
-                    $update_product = DB::table('orders')
-                        ->where('transaction_id', $tran_id)
-                        ->update(['status' => 'Failed']);
-
-                    echo "validation Fail";
                 }
-
             } else if ($order_details->status == 'Processing' || $order_details->status == 'Complete') {
 
                 #That means Order status already updated. No need to udate database.
@@ -306,4 +286,5 @@ class SslCommerzPaymentController extends Controller
             echo "Invalid Data";
         }
     }
+
 }
